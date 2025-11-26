@@ -35,6 +35,15 @@ ament_target_dependencies(go_to_point rclcpp px4_msgs Boost geometry_msgs Eigen3
 install(TARGETS 
   go_to_point
   DESTINATION lib/${PROJECT_NAME})
+  
+  
+  
+add_executable(traj src/traj.cpp)
+ament_target_dependencies(traj rclcpp px4_msgs Boost geometry_msgs Eigen3)
+install(TARGETS 
+  traj
+  DESTINATION lib/${PROJECT_NAME})
+  
 
 if(BUILD_TESTING)
   find_package(ament_lint_auto REQUIRED)
